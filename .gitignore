@@ -12,3 +12,4 @@ artifacts/
 .dev.vars*
 .wrangler/
 .open-next/
+.vercel/

@@ -7,6 +7,7 @@ A Next.js App Router website for **HashTurn LLC** at `https://powerautomatedevel
 Requires Node.js 24, npm and a Neon PostgreSQL database. The application now uses Neon's serverless driver for Cloudflare compatibility.
 
 For Cloudflare Workers build, secrets, and deployment instructions, see [CLOUDFLARE_DEPLOYMENT.md](CLOUDFLARE_DEPLOYMENT.md).
+For the Vercel deployment and GitHub connection, see [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md).
 
 ```powershell
 npm install

@@ -1,0 +1,14 @@
+.env
+.env.*
+.dev.vars*
+.admin-credentials.txt
+.neon
+.neon.*
+.agents/
+.codex/
+.git/
+.next/
+.open-next/
+.wrangler/
+artifacts/
+public/uploads/
