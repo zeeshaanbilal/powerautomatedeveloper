@@ -76,9 +76,11 @@ export async function rateLimit(
 ) {
   const h = await headers();
   const ip =
-    process.env.TRUST_PROXY === "true"
-      ? h.get("x-forwarded-for")?.split(",")[0].trim() || "unknown"
-      : "shared";
+    process.env.CLOUDFLARE_WORKER === "true"
+      ? h.get("cf-connecting-ip") || "unknown"
+      : process.env.TRUST_PROXY === "true"
+        ? h.get("x-forwarded-for")?.split(",")[0].trim() || "unknown"
+        : "shared";
   const key = hash(`${scope}:${identity || ip}`);
   const now = new Date();
   const resetAt = new Date(Date.now() + windowMs);

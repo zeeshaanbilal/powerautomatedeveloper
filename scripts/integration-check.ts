@@ -1,8 +1,8 @@
+import { createPrismaClient } from "../lib/prisma-client";
 import assert from "node:assert/strict";
 import { readFile, mkdir, writeFile } from "node:fs/promises";
-import { PrismaClient } from "@prisma/client";
 import sharp from "sharp";
-const db = new PrismaClient();
+const db = createPrismaClient();
 const base = process.env.AUDIT_URL || "http://localhost:3000";
 const suffix = Date.now().toString(36);
 const slug = `qa-validation-${suffix}`;

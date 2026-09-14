@@ -1,5 +1,5 @@
-import { PrismaClient } from "@prisma/client";
-const db = new PrismaClient();
+import { createPrismaClient } from "../lib/prisma-client";
+const db = createPrismaClient();
 async function main() {
   const tables = await db.$queryRaw<
     { table_name: string }[]

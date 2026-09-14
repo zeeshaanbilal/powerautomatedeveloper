@@ -1,7 +1,31 @@
 import type { NextConfig } from "next";
+import path from "node:path";
 const config: NextConfig = {
   trailingSlash: true,
   poweredByHeader: false,
+  turbopack: {},
+  serverExternalPackages: ["@prisma/client", ".prisma/client"],
+  webpack(config, { webpack }) {
+    if (process.env.CLOUDFLARE_BUILD === "true") {
+      config.resolve.alias["@/lib/optimize-image"] = path.resolve(
+        "lib/optimize-image.cloudflare.ts",
+      );
+      config.resolve.alias["@/lib/prisma-client"] = path.resolve(
+        "lib/prisma-client.cloudflare.ts",
+      );
+      config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(
+          /(?:^|\/)optimize-image$/,
+          path.resolve("lib/optimize-image.cloudflare.ts"),
+        ),
+        new webpack.NormalModuleReplacementPlugin(
+          /(?:^|\/)prisma-client$/,
+          path.resolve("lib/prisma-client.cloudflare.ts"),
+        ),
+      );
+    }
+    return config;
+  },
   images: { formats: ["image/avif", "image/webp"] },
   experimental: { serverActions: { bodySizeLimit: "2mb" } },
   async headers() {

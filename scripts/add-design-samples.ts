@@ -1,6 +1,6 @@
-import { PrismaClient } from "@prisma/client";
+import { createPrismaClient } from "../lib/prisma-client";
 import { readFile } from "node:fs/promises";
-const db = new PrismaClient();
+const db = createPrismaClient();
 const origin = "http://localhost:3000";
 const samples = [
   {

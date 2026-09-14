@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "powerautomatedeveloper",
+  "account_id": "c5bd92c0d0788c277882d200324f8e47",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-09-14",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
+  "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "powerautomatedeveloper" }],
+  "images": { "binding": "IMAGES" },
+  "vars": {
+    "SITE_URL": "https://powerautomatedeveloper.com",
+    "ENFORCE_CANONICAL": "false",
+    "TRUST_PROXY": "true",
+    "CLOUDFLARE_WORKER": "true",
+    "MEDIA_BUCKET": "uploads",
+    "AWS_REGION": "us-east-2"
+  },
+  "observability": { "enabled": true }
+}

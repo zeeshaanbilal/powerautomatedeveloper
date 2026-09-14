@@ -1,6 +1,7 @@
+import { createPrismaClient } from "../lib/prisma-client";
 import { PrismaClient, Prisma } from "@prisma/client";
 import { seedContent, defaults, defaultNavigation } from "../lib/seed-content";
-const db = new PrismaClient();
+const db = createPrismaClient();
 async function main() {
   for (const entry of seedContent) {
     const { id, updatedAt, ...value } = entry;

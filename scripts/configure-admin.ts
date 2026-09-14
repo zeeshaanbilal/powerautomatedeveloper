@@ -1,8 +1,8 @@
-import { PrismaClient } from "@prisma/client";
+import { createPrismaClient } from "../lib/prisma-client";
 import { randomBytes } from "node:crypto";
 import { hash } from "bcryptjs";
 import { writeFile } from "node:fs/promises";
-const db = new PrismaClient();
+const db = createPrismaClient();
 async function main() {
   const email = process.argv[2]?.trim().toLowerCase();
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))

@@ -1,8 +1,8 @@
+import { createPrismaClient } from "../lib/prisma-client";
 import { chromium } from "@playwright/test";
-import { PrismaClient } from "@prisma/client";
 import assert from "node:assert/strict";
 import { writeFile } from "node:fs/promises";
-const db = new PrismaClient();
+const db = createPrismaClient();
 const base = "http://localhost:3000";
 const email = `design-check-${Date.now()}@example.com`;
 async function main() {

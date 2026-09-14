@@ -1,7 +1,7 @@
-import { PrismaClient } from "@prisma/client";
+import { createPrismaClient } from "../lib/prisma-client";
 import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { pageCopyDrafts } from "../lib/page-copy-drafts";
-const db = new PrismaClient();
+const db = createPrismaClient();
 const origin = "http://localhost:3000";
 async function main() {
   const rows = await db.content.findMany({

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { putMedia, deleteMedia } from "@/lib/storage";
 import { randomUUID } from "node:crypto";
-import sharp from "sharp";
+import { optimizeImage } from "@/lib/optimize-image";
 import { z } from "zod";
 import { db } from "@/lib/db";
 import { currentUser, sameOrigin } from "@/lib/auth";
@@ -40,21 +40,7 @@ export async function POST(request: Request) {
         caption: form.get("caption") || "",
       });
     const input = Buffer.from(await file.arrayBuffer());
-    const metadata = await sharp(input, {
-      limitInputPixels: 40000000,
-    }).metadata();
-    if (!["jpeg", "png", "webp"].includes(metadata.format || ""))
-      throw Error("Invalid image format");
-    const { data, info } = await sharp(input, { limitInputPixels: 40000000 })
-      .rotate()
-      .resize({
-        width: 2400,
-        height: 2400,
-        fit: "inside",
-        withoutEnlargement: true,
-      })
-      .webp({ quality: 84 })
-      .toBuffer({ resolveWithObject: true });
+    const { data, info } = await optimizeImage(input);
     const filename = randomUUID() + ".webp";
     await putMedia(filename, data);
     try {

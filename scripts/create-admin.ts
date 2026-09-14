@@ -1,8 +1,8 @@
-import { PrismaClient } from "@prisma/client";
+import { createPrismaClient } from "../lib/prisma-client";
 import { hash } from "bcryptjs";
 import { createInterface } from "node:readline/promises";
 import { stdin, stdout } from "node:process";
-const db = new PrismaClient();
+const db = createPrismaClient();
 async function hiddenPassword(): Promise<string> {
   if (!stdin.isTTY) throw Error("Run this command in an interactive terminal.");
   stdout.write("Password (12–72 characters, hidden): ");
