@@ -87,10 +87,46 @@ export async function Home({
               />
               {copy("text07")}
             </b>
-            <b>{copy("text08")}</b>
-            <b>{copy("text09")}</b>
-            <b>{copy("text10")}</b>
-            <b>{copy("text11")}</b>
+            <b>
+              <Image
+                className="tech-logo"
+                src="/images/power-automate.svg"
+                alt=""
+                width={32}
+                height={32}
+              />
+              {copy("text08").replace(/^↗\s*/, "")}
+            </b>
+            <b>
+              <Image
+                className="tech-logo"
+                src="/images/power-apps.png"
+                alt=""
+                width={32}
+                height={32}
+              />
+              {copy("text09").replace(/^◇\s*/, "")}
+            </b>
+            <b>
+              <Image
+                className="tech-logo"
+                src="/images/sharepoint.svg"
+                alt=""
+                width={32}
+                height={35}
+              />
+              {copy("text10").replace(/^▤\s*/, "")}
+            </b>
+            <b>
+              <Image
+                className="tech-logo"
+                src="/images/dataverse.png"
+                alt=""
+                width={32}
+                height={32}
+              />
+              {copy("text11").replace(/^⊞\s*/, "")}
+            </b>
           </div>
         </div>
       </section>
