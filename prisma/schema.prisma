@@ -1,0 +1,129 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL_UNPOOLED")
+}
+model User {
+  id String @id @default(cuid())
+  email String @unique
+  name String
+  passwordHash String
+  role String @default("ADMIN")
+  sessions Session[]
+  articles Content[]
+  createdAt DateTime @default(now())
+}
+model Session {
+  id String @id
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  @@index([expiresAt])
+}
+model Content {
+  id String @id @default(cuid())
+  kind String
+  slug String @unique
+  title String
+  excerpt String
+  body String @default("")
+  status String @default("DRAFT")
+  publishedAt DateTime?
+  sortOrder Int @default(0)
+  featuredImage String @default("")
+  imageAlt String @default("")
+  seo Json
+  data Json
+  authorId String?
+  author User? @relation(fields: [authorId], references: [id], onDelete: SetNull)
+  categories Category[]
+  tags Tag[]
+  related Content[] @relation("RelatedContent")
+  relatedFrom Content[] @relation("RelatedContent")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@index([kind, status, publishedAt])
+}
+model Category {
+  id String @id @default(cuid())
+  slug String @unique
+  name String @unique
+  posts Content[]
+}
+model Tag {
+  id String @id @default(cuid())
+  slug String @unique
+  name String @unique
+  posts Content[]
+}
+model Media {
+  id String @id @default(cuid())
+  url String @unique
+  filename String
+  alt String @default("")
+  title String @default("")
+  caption String @default("")
+  width Int
+  height Int
+  bytes Int
+  format String
+  createdAt DateTime @default(now())
+}
+model Redirect {
+  id String @id @default(cuid())
+  source String @unique
+  destination String
+  statusCode Int @default(301)
+  active Boolean @default(true)
+}
+model NavigationItem {
+  id String @id @default(cuid())
+  label String
+  href String
+  location String @default("HEADER")
+  sortOrder Int @default(0)
+  active Boolean @default(true)
+}
+model Lead {
+  id String @id @default(cuid())
+  name String
+  company String
+  email String
+  phone String @default("")
+  projectType String
+  services String[]
+  description String
+  budget String @default("")
+  timeline String @default("")
+  status String @default("NEW")
+  notes String @default("")
+  createdAt DateTime @default(now())
+}
+model SiteSettings {
+  id String @id @default("site")
+  value Json
+  updatedAt DateTime @updatedAt
+}
+model GrowthOpportunity {
+  id String @id @default(cuid())
+  website String
+  url String
+  contact String @default("")
+  domain String
+  opportunityType String
+  status String @default("RESEARCH")
+  dateContacted DateTime?
+  response String @default("")
+  linkObtained String @default("")
+  anchorText String @default("")
+  notes String @default("")
+}
+model RateLimit {
+  key String @id
+  count Int @default(1)
+  resetAt DateTime
+  @@index([resetAt])
+}

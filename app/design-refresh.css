@@ -1,0 +1,381 @@
+/* Power Automate palette and image-led public layouts. */
+.site-header {
+  height: 80px;
+  position: sticky;
+  top: 0;
+  background: #fffffff5;
+}
+.header-inner {
+  gap: 26px;
+}
+.desktop-nav {
+  margin-right: auto;
+  margin-left: 26px;
+  gap: 24px;
+}
+.desktop-nav a {
+  font-size: 16px;
+  font-weight: 500;
+}
+.header-cta {
+  white-space: nowrap;
+}
+.brand {
+  font-size: 25px;
+}
+.hero {
+  background: #fff;
+  padding: 64px 0 58px;
+}
+.hero-grid {
+  grid-template-columns: 1fr 1.08fr;
+  gap: 48px;
+}
+.hero h1 {
+  font-size: clamp(48px, 4.7vw, 70px);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+.hero-copy .eyebrow {
+  letter-spacing: 0.09em;
+  margin-bottom: 24px;
+}
+.hero-lead {
+  font-size: 20px;
+  max-width: 520px;
+}
+.hero .button,
+.hero .text-link {
+  font-size: 16px;
+}
+.hero .button-row {
+  gap: 12px 20px;
+}
+.hero-proof {
+  margin-top: 24px;
+}
+.mini-avatars i {
+  background: #eaf1ff;
+  color: #214b97;
+}
+.automation-visual {
+  margin: 0;
+  position: relative;
+  background: #f1f5fc;
+  border: 1px solid #dfe7f4;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 0;
+}
+.visual-topline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px 24px;
+  font-size: 14px;
+  color: #435775;
+}
+.visual-topline span:last-child {
+  letter-spacing: 0.09em;
+  font-size: 12px;
+}
+.automation-art {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+}
+.platform-diagram {
+  position: relative;
+  margin: -22px 24px 0;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #dce5f5;
+  border-radius: 8px;
+  box-shadow: 0 16px 38px #233d7810;
+}
+.platform-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.platform-heading img {
+  flex: 0 0 64px;
+}
+.platform-heading span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #56647b;
+}
+.platform-heading strong {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+.diagram-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e7edf7;
+  font-size: 14px;
+}
+.diagram-steps i {
+  font-style: normal;
+  color: #155bea;
+}
+.automation-visual figcaption {
+  padding: 20px 24px;
+  font-size: 14px;
+  color: #445775;
+}
+.tech-strip {
+  background: #fafbfe;
+}
+.tech-strip b,
+.tech-strip .container > span {
+  color: #56647b;
+}
+.soft-section {
+  border-color: var(--line);
+}
+.build-grid {
+  gap: 24px;
+  border: 0;
+}
+.build-card {
+  padding: 0 0 22px;
+  border: 0;
+  background: white;
+}
+.build-card:hover {
+  background: white;
+}
+.build-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 25px;
+}
+.build-card > span {
+  margin-bottom: 18px;
+}
+.build-card h3 {
+  font-size: 25px;
+}
+.card-icon {
+  background: #eaf1ff;
+  border-color: #d5e2fc;
+}
+.service-card:hover {
+  background: #f8faff;
+  border-color: #adbfdf;
+}
+.engagement-section,
+.site-footer {
+  background: #101e38;
+}
+.engagement-section .eyebrow,
+.engagement-grid .text-link {
+  color: #a4c5ff;
+}
+.engagement-grid p,
+.site-footer {
+  color: #c0cde0;
+}
+.founder-section {
+  background: #f0f4fc;
+}
+.founder-art {
+  background: #dce7fc;
+}
+.founder-art .eyebrow,
+.founder-art > div,
+.founder-art > span {
+  color: #234b93;
+}
+.founder-art > div > span {
+  color: #467edb;
+}
+.founder-photo {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.faq-list details {
+  border-color: var(--line);
+}
+.cta-section {
+  background: #155bea;
+}
+.cta-section .eyebrow,
+.cta-inner p {
+  color: #e5eeff;
+}
+.footer-bottom {
+  border-color: #344360;
+}
+.service-card.image-card {
+  overflow: hidden;
+  padding: 0 0 26px;
+  display: flex;
+  flex-direction: column;
+}
+.image-card > :not(.card-image) {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.card-image {
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: #eef3fc;
+}
+.card-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+.image-card:hover .card-image img {
+  transform: scale(1.025);
+}
+.article-meta {
+  display: block;
+  font-size: 14px;
+  color: #155bea;
+  margin-bottom: 12px;
+}
+.image-card h3 {
+  font-size: 24px;
+  line-height: 1.25;
+}
+.image-card .card-link {
+  margin-top: auto;
+  padding-top: 12px;
+}
+.sample-banner {
+  padding: 12px 20px;
+  background: #eef3ff;
+  color: #294573;
+  text-align: center;
+  font-size: 14px;
+}
+.mobile-nav nav {
+  top: 79px;
+  max-height: calc(100dvh - 80px);
+  overflow-y: auto;
+}
+@media (max-width: 1320px) and (min-width: 1191px) {
+  .header-inner {
+    gap: 18px;
+  }
+  .desktop-nav {
+    gap: 16px;
+    margin-left: 8px;
+  }
+  .header-inner.container {
+    width: calc(100% - 48px);
+  }
+}
+@media (max-width: 1000px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .hero-copy {
+    max-width: 750px;
+  }
+  .hero h1 {
+    max-width: 750px;
+    font-size: 62px;
+  }
+  .hero-lead,
+  .hero-detail {
+    max-width: 620px;
+  }
+  .automation-visual {
+    width: 100%;
+    max-width: 750px;
+  }
+  .automation-art {
+    max-height: 380px;
+  }
+}
+@media (max-width: 767px) {
+  .site-header {
+    height: 72px;
+  }
+  .mobile-nav nav {
+    top: 71px;
+    max-height: calc(100dvh - 72px);
+  }
+  .header-inner {
+    gap: 12px;
+  }
+  .mobile-nav summary {
+    font-size: 16px;
+    min-height: 44px;
+  }
+  .hero {
+    padding: 40px 0;
+  }
+  .hero h1 {
+    font-size: clamp(42px, 9.4vw, 62px);
+  }
+  .hero-lead {
+    font-size: 18px;
+  }
+  .hero .button {
+    padding: 14px 16px;
+  }
+  .platform-diagram {
+    margin: -12px 14px 0;
+    padding: 18px;
+  }
+  .visual-topline,
+  .automation-visual figcaption {
+    padding: 16px;
+  }
+  .visual-topline span:last-child {
+    display: none;
+  }
+  .platform-heading strong {
+    font-size: 22px;
+  }
+  .platform-heading span {
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .diagram-steps {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .build-grid {
+    gap: 30px;
+  }
+  .build-card {
+    border: 0;
+    padding: 0;
+  }
+  .build-image {
+    margin-bottom: 20px;
+  }
+  .insights-section .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-image img {
+    transition: none;
+  }
+}
