@@ -372,7 +372,7 @@ export async function Home({
             }
             alt={
               entries.find((e) => e.slug === "developers/zeeshan-bilal")!
-                .imageAlt || "Zeeshan Bilal, founder of HashTurn"
+                .imageAlt || "Zeeshan Bilal, Lead Automation Developer at HASHTURN"
             }
             width={650}
             height={650}

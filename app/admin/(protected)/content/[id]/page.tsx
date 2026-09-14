@@ -24,7 +24,12 @@ export default async function Edit({
     BLOG: "blog/",
     GUIDE: "resources/guides/",
   };
-  const type = kinds.includes(kind as Kind) ? (kind as Kind) : "PAGE";
+  const type =
+    kind === "DEVELOPER"
+      ? "TEAM"
+      : kinds.includes(kind as Kind)
+        ? (kind as Kind)
+        : "PAGE";
   const initial =
     id === "new"
       ? {
@@ -51,6 +56,7 @@ export default async function Edit({
         }
       : entries.find((e) => e.id === id);
   if (!initial) notFound();
+  if (initial.kind === "DEVELOPER") initial.kind = "TEAM";
   return (
     <>
       <div className="admin-top">

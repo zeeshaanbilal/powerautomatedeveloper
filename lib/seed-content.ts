@@ -421,15 +421,15 @@ const initialContent: Entry[] = [
     "PAGE",
     "developers",
     "Meet your automation development partner",
-    "Work with HashTurn’s founder and wider team of automation specialists across Power Automate and the Microsoft Power Platform.",
+    "Work with HashTurn’s technical lead and wider team of automation specialists across Power Automate and the Microsoft Power Platform.",
   ),
   entry(
-    "DEVELOPER",
+    "TEAM",
     "developers/zeeshan-bilal",
     "Zeeshan Bilal",
-    "Founder & Lead Automation Developer at HashTurn. Zeeshan helps businesses connect their systems and turn manual processes into maintainable automation.",
+    "Lead Automation Developer at HashTurn. Zeeshan helps businesses connect their systems and turn manual processes into maintainable automation.",
     {
-      role: "Founder & Lead Automation Developer",
+      role: "Lead Automation Developer",
       sections: [
         {
           title: "Technical depth, grounded in the process",
@@ -441,7 +441,7 @@ const initialContent: Entry[] = [
         },
         {
           title: "Leading HashTurn",
-          text: "As founder and lead automation developer, Zeeshan brings technical direction to HashTurn’s wider automation team. Project responsibilities and the delivery model are agreed during scoping.",
+          text: "As lead automation developer, Zeeshan brings technical direction to HashTurn’s wider automation team. Project responsibilities and the delivery model are agreed during scoping.",
         },
       ],
       skills: [
@@ -541,7 +541,7 @@ const initialContent: Entry[] = [
       sections: [
         {
           title: "Your automation development partner",
-          text: "Led by founder and lead automation developer Zeeshan Bilal, HashTurn brings together 15+ automation specialists and developers. We work across workflows, business applications, data and integrations.",
+          text: "Led by lead automation developer Zeeshan Bilal, HashTurn brings together 15+ automation specialists and developers. We work across workflows, business applications, data and integrations.",
         },
         {
           title: "How we approach the work",

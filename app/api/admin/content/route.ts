@@ -27,6 +27,7 @@ export async function POST(request: Request) {
         { status: 400 },
       );
     const { id, data, seo, publishedAt, ...fields } = parsed.data;
+    if (fields.kind === "DEVELOPER") fields.kind = "TEAM";
     const categories = [...new Set((data.categoryNames || []).filter(Boolean))];
     const tags = [...new Set((data.tagNames || []).filter(Boolean))];
     if ([...categories, ...tags].some((n) => !taxonomySlug(n)))

@@ -15,7 +15,6 @@ export default async function ProtectedLayout({
     ["Services", "content?kind=SERVICE"],
     ["Hire Pages", "content?kind=HIRE"],
     ["Industries", "content?kind=INDUSTRY"],
-    ["Developers", "content?kind=DEVELOPER"],
     ["Team", "content?kind=TEAM"],
     ["Case Studies", "content?kind=CASE_STUDY"],
     ["Blog", "content?kind=BLOG"],

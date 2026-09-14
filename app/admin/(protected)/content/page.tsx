@@ -1,18 +1,21 @@
 import { requireAdmin } from "@/lib/auth";
 import Link from "next/link";
 import { getAllContent, isPublished } from "@/lib/content";
-import { kinds } from "@/lib/types";
+import { adminKinds } from "@/lib/types";
 export default async function ContentList({
   searchParams,
 }: {
   searchParams: Promise<{ kind?: string; q?: string }>;
 }) {
   await requireAdmin();
-  const { kind, q } = await searchParams;
+  const { kind: requestedKind, q } = await searchParams;
+  const kind = requestedKind === "DEVELOPER" ? "TEAM" : requestedKind;
   const all = await getAllContent();
   const entries = all.filter(
     (e) =>
-      (!kind || e.kind === kind) &&
+      (!kind ||
+        e.kind === kind ||
+        (kind === "TEAM" && e.kind === "DEVELOPER")) &&
       (!q || `${e.title} ${e.slug}`.toLowerCase().includes(q.toLowerCase())),
   );
   return (
@@ -31,7 +34,7 @@ export default async function ContentList({
           Content type
           <select name="kind" defaultValue={kind || ""}>
             <option value="">All content</option>
-            {kinds.map((k) => (
+            {adminKinds.map((k) => (
               <option key={k}>{k}</option>
             ))}
           </select>
@@ -64,7 +67,7 @@ export default async function ContentList({
                     {e.slug ? "/" : ""}
                   </span>
                 </td>
-                <td>{e.kind}</td>
+                <td>{e.kind === "DEVELOPER" ? "TEAM" : e.kind}</td>
                 <td>
                   <span className="status">
                     {isPublished(e)

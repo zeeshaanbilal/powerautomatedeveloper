@@ -12,6 +12,7 @@ export const kinds = [
   "TESTIMONIAL",
 ] as const;
 export type Kind = (typeof kinds)[number];
+export const adminKinds = kinds.filter((kind) => kind !== "DEVELOPER");
 export type SEO = {
   title: string;
   description: string;

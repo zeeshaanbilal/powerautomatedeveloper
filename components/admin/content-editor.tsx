@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { kinds, type Entry, type SEO, type ContentData } from "@/lib/types";
+import { adminKinds, type Entry, type SEO, type ContentData } from "@/lib/types";
 import { RichEditor } from "./rich-editor";
 import { homeCopy } from "@/lib/home-copy";
 type Choice = Pick<Entry, "id" | "slug" | "title" | "seo" | "kind">;
@@ -446,7 +446,7 @@ export function ContentEditor({
                 value={entry.kind}
                 onChange={(e) => set("kind", e.target.value as Entry["kind"])}
               >
-                {kinds.map((k) => (
+                {adminKinds.map((k) => (
                   <option key={k}>{k}</option>
                 ))}
               </select>
