@@ -26,6 +26,7 @@ export function PageContent({
   entries: Entry[];
   preview?: boolean;
 }) {
+  const isPerson = ["DEVELOPER", "TEAM"].includes(entry.kind);
   const isLegal = ["privacy-policy", "terms", "cookie-policy"].includes(
     entry.slug,
   );
@@ -70,47 +71,69 @@ export function PageContent({
         <Breadcrumbs entry={entry} entries={entries} />
       </div>
       <section className="page-hero">
-        <div className="container">
-          <span className="eyebrow">
-            {entry.data.eyebrow ||
-              entry.data.role ||
-              "HashTurn / Business automation"}
-          </span>
-          <h1>{entry.title}</h1>
-          <p>{entry.excerpt}</p>
-          {entry.data.categoryNames?.length || entry.data.tagNames?.length ? (
-            <div className="chips">
-              {[
-                ...(entry.data.categoryNames || []),
-                ...(entry.data.tagNames || []),
-              ].map((name) => (
-                <span key={name}>{name}</span>
-              ))}
-            </div>
-          ) : null}
-          {entry.kind === "CASE_STUDY" &&
-          (entry.data.client || entry.data.industry) ? (
-            <p className="small">
-              {[entry.data.client, entry.data.industry]
-                .filter(Boolean)
-                .join(" · ")}
-            </p>
-          ) : null}
-          {["SERVICE", "HIRE", "INDUSTRY"].includes(entry.kind) && (
-            <Link
-              href="/contact/"
-              className="button"
-              data-conversion="consultation_request"
-            >
-              {entry.data.primaryCta || "Discuss your project"} ↗
-            </Link>
-          )}
-          {entry.data.authorName && (
-            <p className="small">
-              By {entry.data.authorName}
-              {entry.publishedAt &&
-                ` · ${new Date(entry.publishedAt).toLocaleDateString("en-GB", { timeZone: "UTC", day: "numeric", month: "long", year: "numeric" })}`}
-            </p>
+        <div className={isPerson ? "container team-profile-hero" : "container"}>
+          <div>
+            <span className="eyebrow">
+              {entry.data.eyebrow ||
+                entry.data.role ||
+                "HashTurn / Business automation"}
+            </span>
+            <h1>{entry.title}</h1>
+            <p>{entry.excerpt}</p>
+            {entry.data.categoryNames?.length || entry.data.tagNames?.length ? (
+              <div className="chips">
+                {[
+                  ...(entry.data.categoryNames || []),
+                  ...(entry.data.tagNames || []),
+                ].map((name) => (
+                  <span key={name}>{name}</span>
+                ))}
+              </div>
+            ) : null}
+            {entry.kind === "CASE_STUDY" &&
+            (entry.data.client || entry.data.industry) ? (
+              <p className="small">
+                {[entry.data.client, entry.data.industry]
+                  .filter(Boolean)
+                  .join(" · ")}
+              </p>
+            ) : null}
+            {(["SERVICE", "HIRE", "INDUSTRY"].includes(entry.kind) ||
+              isPerson) && (
+              <Link
+                href="/contact/"
+                className="button"
+                data-conversion="consultation_request"
+              >
+                {entry.data.primaryCta || "Discuss your project"} ↗
+              </Link>
+            )}
+            {entry.data.authorName && (
+              <p className="small">
+                By {entry.data.authorName}
+                {entry.publishedAt &&
+                  ` · ${new Date(entry.publishedAt).toLocaleDateString("en-GB", { timeZone: "UTC", day: "numeric", month: "long", year: "numeric" })}`}
+              </p>
+            )}
+            {isPerson && (
+              <p className="team-profile-back">
+                <Link href="/developers/our-team/" className="text-link">
+                  Meet the rest of HASHTURN
+                </Link>
+              </p>
+            )}
+          </div>
+          {isPerson && entry.featuredImage && (
+            <Image
+              className="team-profile-photo"
+              src={entry.featuredImage}
+              alt={entry.imageAlt || entry.title}
+              width={650}
+              height={650}
+              sizes="(max-width: 767px) 90vw, 420px"
+              priority
+              unoptimized={!entry.featuredImage.startsWith("/")}
+            />
           )}
         </div>
       </section>
@@ -136,7 +159,7 @@ export function PageContent({
         </section>
       ) : (
         <>
-          {entry.featuredImage && (
+          {entry.featuredImage && !isPerson && (
             <div className="container feature-image">
               <Image
                 src={entry.featuredImage}

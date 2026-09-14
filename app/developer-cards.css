@@ -14,6 +14,39 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
+.team-profile-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: clamp(28px, 6vw, 88px);
+}
+.team-profile-hero > div {
+  min-width: 0;
+}
+.team-profile-photo {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  justify-self: end;
+}
+.team-profile-back {
+  margin: 22px 0 0;
+  font-size: 16px;
+}
+@media (max-width: 767px) {
+  .team-profile-hero {
+    grid-template-columns: 1fr;
+  }
+  .team-profile-photo {
+    justify-self: start;
+    max-width: 420px;
+  }
+}
 .developer-card {
   min-width: 0;
   background: white;
