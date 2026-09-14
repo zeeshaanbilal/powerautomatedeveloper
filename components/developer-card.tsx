@@ -37,7 +37,7 @@ export function DeveloperCard({ entry }: { entry: Entry }) {
       </Link>
       <div className="developer-card-body">
         <p className="developer-role">
-          {entry.data.role || "Automation developer"}
+          {entry.data.role || "Automation Team Member"}
         </p>
         <h3>
           <Link href={`/${entry.slug}/`}>{entry.title}</Link>
@@ -53,13 +53,6 @@ export function DeveloperCard({ entry }: { entry: Entry }) {
         <div className="developer-actions">
           <Link href={`/${entry.slug}/`} className="text-link">
             View profile <span aria-hidden="true">↗</span>
-          </Link>
-          <Link
-            href="/contact/"
-            className="button button-outline"
-            data-conversion="hire_developer_cta"
-          >
-            Discuss hiring
           </Link>
         </div>
       </div>
@@ -77,7 +70,7 @@ export function DeveloperSection({ entries }: { entries: Entry[] }) {
       <div className="section-heading">
         <div>
           <span className="eyebrow">The people behind your workflows</span>
-          <h2>Meet your automation developers.</h2>
+          <h2>Meet the HASHTURN team.</h2>
         </div>
         <Link href="/developers/" className="text-link">
           Explore the team ↗
@@ -87,6 +80,11 @@ export function DeveloperSection({ entries }: { entries: Entry[] }) {
         {people.slice(0, 3).map((entry) => (
           <DeveloperCard key={entry.id} entry={entry} />
         ))}
+      </div>
+      <div className="button-row">
+        <Link href="/contact/" className="button" data-conversion="hire_team_cta">
+          Discuss Your Project
+        </Link>
       </div>
     </section>
   );
