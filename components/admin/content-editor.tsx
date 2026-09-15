@@ -78,7 +78,7 @@ export function ContentEditor({
     }
   }
 
-  async function uploadImage(file: File, target: "featuredImage" | "gallery" = "featuredImage", galleryIndex?: number) {
+  async function uploadImage(file: File, target: "featuredImage" | "gallery" | "ogImage" | "twitterImage" = "featuredImage", galleryIndex?: number) {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("alt", entry.title || "Uploaded image");
@@ -95,6 +95,10 @@ export function ContentEditor({
         setEntry((e) => ({ ...e, featuredImage: data.url }));
       } else if (target === "gallery" && galleryIndex !== undefined) {
         data("gallery", entry.data.gallery?.map((g, j) => j === galleryIndex ? { ...g, url: data.url } : g));
+      } else if (target === "ogImage") {
+        seo("ogImage", data.url);
+      } else if (target === "twitterImage") {
+        seo("twitterImage", data.url);
       }
       
       setMessage("Image uploaded successfully.");
@@ -433,10 +437,40 @@ export function ContentEditor({
                     twitterImage: "Twitter/X image URL",
                   }[key]
                 }
-                <input
-                  value={entry.seo[key] || ""}
-                  onChange={(e) => seo(key, e.target.value)}
-                />
+                {key === "ogImage" || key === "twitterImage" ? (
+                  <>
+                    <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                      <input
+                        style={{ flex: 1 }}
+                        value={entry.seo[key] || ""}
+                        onChange={(e) => seo(key, e.target.value)}
+                      />
+                      <input 
+                        type="file" 
+                        accept="image/jpeg,image/png,image/webp"
+                        disabled={busy}
+                        onChange={(e) => {
+                          const file = e.target.files?.[0];
+                          if (file) uploadImage(file, key);
+                        }} 
+                        style={{ flex: "none", width: "auto" }}
+                      />
+                      <button type="submit" className="button button-small" disabled={busy} style={{ flex: "none" }}>Save</button>
+                    </div>
+                    {entry.seo[key] && (
+                      <img 
+                        src={entry.seo[key]} 
+                        alt="Preview" 
+                        style={{ marginTop: "10px", maxHeight: "150px", borderRadius: "8px", objectFit: "contain" }} 
+                      />
+                    )}
+                  </>
+                ) : (
+                  <input
+                    value={entry.seo[key] || ""}
+                    onChange={(e) => seo(key, e.target.value)}
+                  />
+                )}
               </label>
             ))}
             <label className="inline-check">
