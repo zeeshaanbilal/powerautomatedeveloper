@@ -49,6 +49,16 @@ export function ServiceIcon({ slug }: { slug: string }) {
       />
     );
   }
+  if (slug.includes("ai-builder")) {
+    // AI Builder
+    return (
+      <img 
+        src="/images/ai-builder.png" 
+        alt="AI Builder Logo" 
+        style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+      />
+    );
+  }
   
   // Default API / Integrations
   return (
