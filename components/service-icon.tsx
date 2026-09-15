@@ -19,6 +19,16 @@ export function ServiceIcon({ slug }: { slug: string }) {
       />
     );
   }
+  if (slug.includes("power-pages")) {
+    // Power Pages
+    return (
+      <img 
+        src="/images/power-pages.png" 
+        alt="Power Pages Logo" 
+        style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+      />
+    );
+  }
   if (slug.includes("sharepoint")) {
     // SharePoint (Teal 'S' or nodes)
     return (
