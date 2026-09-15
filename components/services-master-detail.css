@@ -65,17 +65,19 @@
 }
 
 .smd-icon-box {
-  width: 64px;
-  height: 64px;
-  background-color: var(--mint);
-  border: 1px solid var(--line);
+  width: 52px;
+  height: 52px;
+  background-color: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.15);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 12px;
   margin-bottom: 32px;
   font-size: 24px;
   color: var(--teal);
+  overflow: hidden;
 }
 
 .smd-title {

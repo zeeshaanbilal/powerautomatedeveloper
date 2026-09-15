@@ -5,7 +5,7 @@ export function ServiceIcon({ slug }: { slug: string }) {
       <img 
         src="/images/power-automate.svg" 
         alt="Power Automate Logo" 
-        style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+        style={{ width: "28px", height: "28px", objectFit: "contain" }} 
       />
     );
   }
@@ -15,7 +15,7 @@ export function ServiceIcon({ slug }: { slug: string }) {
       <img 
         src="/images/power-apps.png" 
         alt="Power Apps Logo" 
-        style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+        style={{ width: "28px", height: "28px", objectFit: "contain" }} 
       />
     );
   }
@@ -25,7 +25,7 @@ export function ServiceIcon({ slug }: { slug: string }) {
       <img 
         src="/images/power-pages.png" 
         alt="Power Pages Logo" 
-        style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+        style={{ width: "28px", height: "28px", objectFit: "contain" }} 
       />
     );
   }
@@ -35,7 +35,7 @@ export function ServiceIcon({ slug }: { slug: string }) {
       <img 
         src="/images/sharepoint.svg" 
         alt="SharePoint Logo" 
-        style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+        style={{ width: "28px", height: "28px", objectFit: "contain" }} 
       />
     );
   }
@@ -45,7 +45,7 @@ export function ServiceIcon({ slug }: { slug: string }) {
       <img 
         src="/images/dataverse.png" 
         alt="Dataverse Logo" 
-        style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+        style={{ width: "28px", height: "28px", objectFit: "contain" }} 
       />
     );
   }
@@ -55,7 +55,7 @@ export function ServiceIcon({ slug }: { slug: string }) {
       <img 
         src="/images/excel-logo.webp" 
         alt="Microsoft Excel Logo" 
-        style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+        style={{ width: "28px", height: "28px", objectFit: "contain" }} 
       />
     );
   }
@@ -65,14 +65,14 @@ export function ServiceIcon({ slug }: { slug: string }) {
       <img 
         src="/images/ai-builder.png" 
         alt="AI Builder Logo" 
-        style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+        style={{ width: "28px", height: "28px", objectFit: "contain" }} 
       />
     );
   }
   if (slug.includes("crm")) {
     // CRM Automation — Users with Sync Cycle
     return (
-      <svg viewBox="0 0 32 32" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
         {/* User 1 */}
         <circle cx="10" cy="10" r="3.5" fill="#e5f0ff" stroke="#0066ff" strokeWidth="1.5" />
         <path d="M4 21C4 17.6863 6.6863 15.5 10 15.5C13.3137 15.5 16 17.6863 16 21" stroke="#0066ff" strokeWidth="1.5" strokeLinecap="round" fill="none" />
@@ -90,7 +90,7 @@ export function ServiceIcon({ slug }: { slug: string }) {
   if (slug.includes("document")) {
     // Document Automation — File with Scanner Beam
     return (
-      <svg viewBox="0 0 32 32" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
         {/* Document body */}
         <path d="M8 4H20L24 8V28H8V4Z" fill="#e5f0ff" stroke="#0066ff" strokeWidth="1.5" strokeLinejoin="round" />
         {/* Folded corner */}
@@ -110,7 +110,7 @@ export function ServiceIcon({ slug }: { slug: string }) {
   if (slug.includes("business-process") || slug.includes("workflow") || slug.includes("operation")) {
     // Operations Workflow — Flowchart Node Icon
     return (
-      <svg viewBox="0 0 32 32" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
         {/* Main node */}
         <rect x="4" y="12" width="8" height="8" rx="2" fill="#e5f0ff" stroke="#0066ff" strokeWidth="1.5" />
         {/* Branch lines */}
@@ -132,7 +132,7 @@ export function ServiceIcon({ slug }: { slug: string }) {
   
   // Default API / Integrations
   return (
-    <svg viewBox="0 0 32 32" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="7" y="10" width="17" height="12" rx="3" fill="#e5f0ff" stroke="#0066ff" strokeWidth="1.5" />
       <text x="15.5" y="19" fontFamily="system-ui, sans-serif" fontWeight="700" fontSize="8" fill="#0066ff" textAnchor="middle">API</text>
       

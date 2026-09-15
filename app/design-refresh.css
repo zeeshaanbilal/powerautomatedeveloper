@@ -171,8 +171,8 @@
   font-size: 25px;
 }
 .card-icon {
-  background: #eaf1ff;
-  border-color: #d5e2fc;
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.15);
 }
 .service-card:hover {
   background: #f8faff;

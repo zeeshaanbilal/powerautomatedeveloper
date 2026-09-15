@@ -102,9 +102,7 @@ export function Cards({ entries }: { entries: Entry[] }) {
               </div>
             ) : (
               <span className="card-icon" aria-hidden="true">
-                <div style={{ width: '24px', height: '24px' }}>
-                  <ServiceIcon slug={e.slug} />
-                </div>
+                <ServiceIcon slug={e.slug} />
               </span>
             )}
             {e.kind === "BLOG" && (
