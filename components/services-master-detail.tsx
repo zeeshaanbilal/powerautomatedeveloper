@@ -4,11 +4,9 @@ import { useState } from "react";
 import type { Entry } from "@/lib/types";
 import Link from "next/link";
 import "./services-master-detail.css";
+import { ServiceIcon } from "./service-icon";
 
 const publicPath = (slug: string) => (slug ? `/${slug}/` : "/");
-
-
-const icons = ["⌘", "↗", "▧", "⇄", "◇", "⊞"];
 
 export function ServicesMasterDetail({ entries }: { entries: Entry[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -16,7 +14,6 @@ export function ServicesMasterDetail({ entries }: { entries: Entry[] }) {
   if (!entries || entries.length === 0) return null;
 
   const activeEntry = entries[activeIndex];
-  const activeIcon = icons[activeIndex % icons.length];
 
   return (
     <div className="services-master-detail">
@@ -33,7 +30,7 @@ export function ServicesMasterDetail({ entries }: { entries: Entry[] }) {
       </div>
       <div className="smd-content">
         <div className="smd-icon-box">
-          <span aria-hidden="true">{activeIcon}</span>
+          <ServiceIcon slug={activeEntry.slug} />
         </div>
         <h3 className="smd-title">{activeEntry.title}</h3>
         <p className="smd-desc">{activeEntry.excerpt}</p>

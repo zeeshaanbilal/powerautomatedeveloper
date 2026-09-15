@@ -3,6 +3,7 @@ import Image from "next/image";
 import { DeveloperCard } from "./developer-card";
 import type { Entry } from "@/lib/types";
 import { publicPath, getSettings } from "@/lib/content";
+import { ServiceIcon } from "./service-icon";
 export function JsonLd({ value }: { value: unknown }) {
   return (
     <script
@@ -101,7 +102,9 @@ export function Cards({ entries }: { entries: Entry[] }) {
               </div>
             ) : (
               <span className="card-icon" aria-hidden="true">
-                {["⌘", "↗", "▧", "⇄", "◇", "⊞"][i % 6]}
+                <div style={{ width: '24px', height: '24px' }}>
+                  <ServiceIcon slug={e.slug} />
+                </div>
               </span>
             )}
             {e.kind === "BLOG" && (
