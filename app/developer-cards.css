@@ -107,7 +107,7 @@
   font-size: 24px;
 }
 .developer-card-body {
-  padding: 26px;
+  padding: 20px;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -119,13 +119,18 @@
   margin-bottom: 10px;
 }
 .developer-card h3 {
-  font-size: 26px;
-  margin-bottom: 18px;
+  font-size: 22px;
+  margin-bottom: 12px;
 }
 .developer-bio {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 .developer-skills {
   display: flex;

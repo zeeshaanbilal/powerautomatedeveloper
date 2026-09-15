@@ -45,7 +45,7 @@ export function DeveloperCard({ entry }: { entry: Entry }) {
         <p className="developer-bio">{entry.excerpt}</p>
         {!!entry.data.skills?.length && (
           <ul className="developer-skills" aria-label="Skills">
-            {entry.data.skills.slice(0, 4).map((skill) => (
+            {entry.data.skills.slice(0, 3).map((skill) => (
               <li key={skill}>{skill}</li>
             ))}
           </ul>
