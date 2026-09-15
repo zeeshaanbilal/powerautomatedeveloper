@@ -5,6 +5,7 @@ import Image from "next/image";
 import { AutomationVisual } from "./automation-visual";
 import { homeCopy } from "@/lib/home-copy";
 import { getSettings } from "@/lib/content";
+import { ServicesMasterDetail } from "./services-master-detail";
 export async function Home({
   entry,
   entries,
@@ -204,7 +205,7 @@ export async function Home({
               <span aria-hidden="true">↗</span>
             </Link>
           </div>
-          <Cards
+          <ServicesMasterDetail
             entries={services.filter((e) =>
               [
                 "power-automate-development",

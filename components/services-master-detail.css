@@ -1,0 +1,135 @@
+.services-master-detail {
+  display: flex;
+  background-color: var(--paper);
+  color: var(--ink);
+  border: 1px solid #d1d9e6;
+  border-radius: var(--radius, 12px);
+  overflow: hidden;
+  min-height: 500px;
+  font-family: inherit;
+  box-shadow: 0 20px 40px rgba(21, 34, 56, 0.08);
+  margin-top: 40px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.services-master-detail:hover {
+  box-shadow: 0 25px 50px rgba(21, 91, 234, 0.12);
+  transform: translateY(-2px);
+}
+
+.smd-sidebar {
+  width: 35%;
+  background-color: #f4f6fa;
+  border-right: 1px solid #d1d9e6;
+  display: flex;
+  flex-direction: column;
+}
+
+.smd-tab {
+  padding: 24px 32px;
+  cursor: pointer;
+  border-bottom: 1px solid #d1d9e6;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--muted);
+  transition: all 0.2s ease;
+  background: transparent;
+  text-align: left;
+  border-left: 3px solid transparent;
+  border-top: none;
+  border-right: none;
+}
+
+.smd-tab:hover {
+  color: var(--teal);
+  background-color: rgba(21, 91, 234, 0.04);
+  text-shadow: 0 0 8px rgba(21, 91, 234, 0.2);
+}
+
+.smd-tab.active {
+  color: var(--ink);
+  background-color: var(--paper);
+  border-left-color: var(--teal);
+  box-shadow: -1px 0 0 0 #d1d9e6; /* cover border */
+  margin-right: -1px; /* overlap border */
+  position: relative;
+  z-index: 10;
+}
+
+.smd-content {
+  width: 65%;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.smd-icon-box {
+  width: 64px;
+  height: 64px;
+  background-color: var(--mint);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  font-size: 24px;
+  color: var(--teal);
+}
+
+.smd-title {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.smd-desc {
+  font-size: 1.125rem;
+  color: var(--muted);
+  margin-bottom: 40px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.smd-button {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: transparent;
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+
+.smd-button:hover {
+  background-color: var(--teal);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .services-master-detail {
+    flex-direction: column;
+  }
+  .smd-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .smd-tab {
+    padding: 16px 24px;
+    font-size: 1.1rem;
+  }
+  .smd-content {
+    width: 100%;
+    padding: 32px 24px;
+  }
+}

@@ -470,6 +470,65 @@ const initialContent: Entry[] = [
     },
   ),
   entry(
+    "TEAM",
+    "developers/rehana-ghaffar",
+    "Rehana Ghaffar",
+    "RPA Developer at HashTurn. Rehana specialises in robotic process automation and desktop workflows.",
+    {
+      role: "RPA Developer",
+      sections: [
+        {
+          title: "Robotic Process Automation",
+          text: "Rehana focuses on automating repetitive work in legacy systems and desktop applications using Power Automate Desktop and RPA tools.",
+        },
+        {
+          title: "Reliable Desktop Workflows",
+          text: "Her approach ensures unattended and attended desktop flows account for application state, machine dependencies, and clear exception handling.",
+        },
+      ],
+      skills: [
+        "Power Automate Desktop",
+        "RPA",
+        "Automation Strategy",
+        "Excel & VBA",
+      ],
+      related: [
+        "services/power-automate-desktop",
+        "hire/power-automate-developer",
+      ],
+    },
+  ),
+  entry(
+    "TEAM",
+    "developers/zohaib-rashid",
+    "Zohaib Rashid",
+    "Power Apps Developer at HashTurn. Zohaib builds focused applications and reliable data foundations for business teams.",
+    {
+      role: "Power Apps Developer",
+      sections: [
+        {
+          title: "Custom Business Applications",
+          text: "Zohaib designs canvas and model-driven applications tailored to specific operational workflows, ensuring intuitive data entry and seamless request management.",
+        },
+        {
+          title: "Relational Data Foundations",
+          text: "He structures Dataverse environments and SharePoint architectures so that Power Platform solutions rest on secure, consistent, and scalable data models.",
+        },
+      ],
+      skills: [
+        "Power Apps",
+        "Dataverse",
+        "SharePoint",
+        "CRM Automation",
+      ],
+      related: [
+        "services/power-apps-development",
+        "services/dataverse-development",
+        "hire/power-automate-team",
+      ],
+    },
+  ),
+  entry(
     "PAGE",
     "developers/our-team",
     "One team. Connected expertise.",
@@ -614,7 +673,7 @@ const initialContent: Entry[] = [
 ];
 export const seedContent: Entry[] = initialContent.map((entry) => {
   const copy = pageCopyDrafts[entry.slug];
-  return copy
+  const e = copy
     ? {
         ...entry,
         excerpt: copy.excerpt,
@@ -622,6 +681,18 @@ export const seedContent: Entry[] = initialContent.map((entry) => {
         seo: { ...entry.seo, description: copy.excerpt },
       }
     : entry;
+    
+  if (e.slug === "developers/rehana-ghaffar") {
+    e.featuredImage = "/images/rehana-ghaffar.jpg";
+    e.imageAlt = "Rehana Ghaffar, RPA Developer";
+  }
+  
+  if (e.slug === "developers/zohaib-rashid") {
+    e.featuredImage = "/images/zohaib-rashid.jpg";
+    e.imageAlt = "Zohaib Rashid, Power Apps Developer";
+  }
+  
+  return e;
 });
 export const defaultNavigation = [
   ["Home", "/"],
