@@ -2,10 +2,11 @@ export function ServiceIcon({ slug }: { slug: string }) {
   if (slug.includes("power-automate")) {
     // Power Automate (Blue Arrow/Chevron style)
     return (
-      <svg viewBox="0 0 32 32" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" fill="#e5f0ff" />
-        <path d="M22 13L16 19L10 13H14V9H18V13H22Z" fill="#0066ff" />
-      </svg>
+      <img 
+        src="/images/power-automate-logo.jpg" 
+        alt="Power Automate Logo" 
+        style={{ width: "100%", height: "100%", objectFit: "contain", mixBlendMode: "multiply" }} 
+      />
     );
   }
   if (slug.includes("power-apps")) {
