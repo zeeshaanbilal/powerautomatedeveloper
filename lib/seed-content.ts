@@ -532,9 +532,9 @@ const initialContent: Entry[] = [
     "TEAM",
     "developers/aqsa-wazeer",
     "Aqsa Wazeer",
-    "Power Automate Desktop Developer at HashTurn. Aqsa builds attended and unattended workflows for legacy application automation.",
+    "RPA Developer at HashTurn. Aqsa builds attended and unattended workflows for legacy application automation.",
     {
-      role: "Power Automate Desktop Developer",
+      role: "RPA Developer",
       sections: [
         {
           title: "Desktop Automation Specialist",
@@ -722,8 +722,8 @@ export const seedContent: Entry[] = initialContent.map((entry) => {
   }
   
   if (e.slug === "developers/aqsa-wazeer") {
-    e.featuredImage = "/images/aqsa-wazeer.jpg";
-    e.imageAlt = "Aqsa Wazeer, Power Automate Desktop Developer";
+    e.featuredImage = "/media_1789467755008.png";
+    e.imageAlt = "Aqsa Wazeer, RPA Developer";
   }
   
   return e;
