@@ -69,6 +69,44 @@ export function ServiceIcon({ slug }: { slug: string }) {
       />
     );
   }
+  if (slug.includes("crm")) {
+    // CRM Automation — Users with Sync Cycle
+    return (
+      <svg viewBox="0 0 32 32" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* User 1 */}
+        <circle cx="10" cy="10" r="3.5" fill="#e5f0ff" stroke="#0066ff" strokeWidth="1.5" />
+        <path d="M4 21C4 17.6863 6.6863 15.5 10 15.5C13.3137 15.5 16 17.6863 16 21" stroke="#0066ff" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+        {/* User 2 */}
+        <circle cx="22" cy="10" r="3.5" fill="#e5f0ff" stroke="#0066ff" strokeWidth="1.5" />
+        <path d="M16 21C16 17.6863 18.6863 15.5 22 15.5C25.3137 15.5 28 17.6863 28 21" stroke="#0066ff" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+        {/* Sync arrows */}
+        <path d="M13 25L16 23L19 25" stroke="#0066ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <path d="M19 28L16 30L13 28" stroke="#0066ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <path d="M13 25V28" stroke="#0066ff" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+        <path d="M19 25V28" stroke="#0066ff" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+      </svg>
+    );
+  }
+  if (slug.includes("document")) {
+    // Document Automation — File with Scanner Beam
+    return (
+      <svg viewBox="0 0 32 32" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* Document body */}
+        <path d="M8 4H20L24 8V28H8V4Z" fill="#e5f0ff" stroke="#0066ff" strokeWidth="1.5" strokeLinejoin="round" />
+        {/* Folded corner */}
+        <path d="M20 4V8H24" stroke="#0066ff" strokeWidth="1.5" strokeLinejoin="round" fill="none" />
+        {/* Text lines */}
+        <line x1="11" y1="13" x2="21" y2="13" stroke="#0066ff" strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="11" y1="17" x2="19" y2="17" stroke="#0066ff" strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="11" y1="21" x2="17" y2="21" stroke="#0066ff" strokeWidth="1.5" strokeLinecap="round" />
+        {/* Scanner beam */}
+        <line x1="6" y1="16" x2="26" y2="16" stroke="#00aaff" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+        {/* Checkmark */}
+        <circle cx="24" cy="25" r="4" fill="#0066ff" />
+        <path d="M22 25L23.5 26.5L26.5 23.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      </svg>
+    );
+  }
   if (slug.includes("business-process") || slug.includes("workflow") || slug.includes("operation")) {
     // Operations Workflow — Flowchart Node Icon
     return (
