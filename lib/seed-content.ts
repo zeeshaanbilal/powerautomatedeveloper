@@ -502,9 +502,9 @@ const initialContent: Entry[] = [
     "TEAM",
     "developers/zohaib-rashid",
     "Zohaib Rashid",
-    "Power Apps Developer at HashTurn. Zohaib builds focused applications and reliable data foundations for business teams.",
+    "Automation Engineer at HashTurn. Zohaib specialises in business automation.",
     {
-      role: "Power Apps Developer",
+      role: "Automation Engineer",
       sections: [
         {
           title: "Custom Business Applications",
