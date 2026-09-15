@@ -77,7 +77,7 @@ export function DeveloperSection({ entries }: { entries: Entry[] }) {
         </Link>
       </div>
       <div className="developer-grid">
-        {people.slice(0, 3).map((entry) => (
+        {people.slice(0, 4).map((entry) => (
           <DeveloperCard key={entry.id} entry={entry} />
         ))}
       </div>
