@@ -53,8 +53,8 @@ export function ServiceIcon({ slug }: { slug: string }) {
     // Excel / Microsoft 365
     return (
       <img 
-        src="/images/microsoft-365-2022.svg" 
-        alt="Microsoft 365 Logo" 
+        src="/images/excel-logo.webp" 
+        alt="Microsoft Excel Logo" 
         style={{ width: "100%", height: "100%", objectFit: "contain" }} 
       />
     );
