@@ -558,6 +558,29 @@ const initialContent: Entry[] = [
     },
   ),
   entry(
+    "TEAM",
+    "developers/iqra-ahsan",
+    "Iqra Ahsan",
+    "SharePoint Architect at HashTurn. Iqra designs robust and scalable SharePoint architectures.",
+    {
+      role: "SharePoint Architect",
+      sections: [
+        {
+          title: "SharePoint Architecture",
+          text: "Iqra plans the information architecture, governance policies, and designs robust SharePoint solutions.",
+        },
+      ],
+      skills: [
+        "SharePoint",
+        "Microsoft 365",
+        "Architecture",
+      ],
+      related: [
+        "services/sharepoint-automation",
+      ],
+    },
+  ),
+  entry(
     "PAGE",
     "developers/our-team",
     "One team. Connected expertise.",
@@ -724,6 +747,10 @@ export const seedContent: Entry[] = initialContent.map((entry) => {
   if (e.slug === "developers/aqsa-wazeer") {
     e.featuredImage = "/media_1789467755008.png";
     e.imageAlt = "Aqsa Wazeer, RPA Developer";
+  }
+  
+  if (e.slug === "developers/iqra-ahsan") {
+    e.imageAlt = "Iqra Ahsan, SharePoint Architect";
   }
   
   return e;
