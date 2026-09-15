@@ -28,7 +28,7 @@ export function Breadcrumbs({
     const found = entries.find((e) => e.slug === slug);
     if (found) crumbs.push({ title: found.title, href: publicPath(slug) });
   });
-  const backCrumb = crumbs.length > 1 ? crumbs[crumbs.length - 2] : null;
+  const backCrumb = crumbs.length > 2 ? crumbs[crumbs.length - 2] : null;
 
   return (
     <>

@@ -2,7 +2,7 @@ export function ServiceIcon({ slug }: { slug: string }) {
   if (slug.includes("power-automate")) {
     // Power Automate (Blue Arrow/Chevron style)
     return (
-      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 32 32" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" fill="#e5f0ff" />
         <path d="M22 13L16 19L10 13H14V9H18V13H22Z" fill="#0066ff" />
       </svg>
@@ -11,7 +11,7 @@ export function ServiceIcon({ slug }: { slug: string }) {
   if (slug.includes("power-apps")) {
     // Power Apps (Purple Diamond)
     return (
-      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 32 32" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M16 2L30 16L16 30L2 16L16 2Z" fill="#f4e8fc" />
         <path d="M14 11V21L21 16L14 11Z" fill="#742774" />
       </svg>
@@ -20,7 +20,7 @@ export function ServiceIcon({ slug }: { slug: string }) {
   if (slug.includes("sharepoint")) {
     // SharePoint (Teal 'S' or nodes)
     return (
-      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 32 32" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="4" y="4" width="24" height="24" rx="4" fill="#e5f5f4" />
         <path d="M19 10C20.6569 10 22 11.3431 22 13C22 14.6569 20.6569 16 19 16C17.3431 16 16 14.6569 16 13C16 11.3431 17.3431 10 19 10Z" fill="#0078d4" />
         <path d="M11 16C12.6569 16 14 17.3431 14 19C14 20.6569 12.6569 22 11 22C9.34315 22 8 20.6569 8 19C8 17.3431 9.34315 16 11 16Z" fill="#0078d4" />
@@ -41,7 +41,7 @@ export function ServiceIcon({ slug }: { slug: string }) {
   
   // Default API / Integrations
   return (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 32 32" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="16" cy="16" r="14" fill="#f3f4f6" />
       <path d="M12 16L16 12L20 16M16 12V20" stroke="#4b5563" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
