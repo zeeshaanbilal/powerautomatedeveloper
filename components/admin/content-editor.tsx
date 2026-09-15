@@ -77,6 +77,34 @@ export function ContentEditor({
       setBusy(false);
     }
   }
+
+  async function uploadImage(file: File, target: "featuredImage" | "gallery" = "featuredImage", galleryIndex?: number) {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("alt", entry.title || "Uploaded image");
+    setBusy(true);
+    try {
+      const r = await fetch("/api/admin/media/", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await r.json();
+      if (!r.ok) throw new Error(data.error);
+      
+      if (target === "featuredImage") {
+        setEntry((e) => ({ ...e, featuredImage: data.url }));
+      } else if (target === "gallery" && galleryIndex !== undefined) {
+        data("gallery", entry.data.gallery?.map((g, j) => j === galleryIndex ? { ...g, url: data.url } : g));
+      }
+      
+      setMessage("Image uploaded successfully.");
+    } catch (e) {
+      setMessage("Image upload failed.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
   async function remove() {
     if (
       !confirm(
@@ -564,10 +592,23 @@ export function ContentEditor({
                   works best; keep the face near the upper center.
                 </span>
               )}
-              <input
-                value={entry.featuredImage}
-                onChange={(e) => set("featuredImage", e.target.value)}
-              />
+              <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                <input
+                  style={{ flex: 1 }}
+                  value={entry.featuredImage}
+                  onChange={(e) => set("featuredImage", e.target.value)}
+                />
+                <input 
+                  type="file" 
+                  accept="image/jpeg,image/png,image/webp"
+                  disabled={busy}
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) uploadImage(file, "featuredImage");
+                  }} 
+                  style={{ flex: "none", width: "auto" }}
+                />
+              </div>
             </label>
             <label>
               Image alt text
@@ -580,17 +621,30 @@ export function ContentEditor({
               <div className="section-editor" key={i}>
                 <label>
                   Gallery image URL
-                  <input
-                    value={img.url}
-                    onChange={(e) =>
-                      data(
-                        "gallery",
-                        entry.data.gallery?.map((g, j) =>
-                          j === i ? { ...g, url: e.target.value } : g,
-                        ),
-                      )
-                    }
-                  />
+                  <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                    <input
+                      style={{ flex: 1 }}
+                      value={img.url}
+                      onChange={(e) =>
+                        data(
+                          "gallery",
+                          entry.data.gallery?.map((g, j) =>
+                            j === i ? { ...g, url: e.target.value } : g,
+                          ),
+                        )
+                      }
+                    />
+                    <input 
+                      type="file" 
+                      accept="image/jpeg,image/png,image/webp"
+                      disabled={busy}
+                      onChange={(e) => {
+                        const file = e.target.files?.[0];
+                        if (file) uploadImage(file, "gallery", i);
+                      }} 
+                      style={{ flex: "none", width: "auto" }}
+                    />
+                  </div>
                 </label>
                 <label>
                   Alt text
