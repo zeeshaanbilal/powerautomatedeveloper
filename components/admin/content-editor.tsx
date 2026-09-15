@@ -592,24 +592,32 @@ export function ContentEditor({
                   works best; keep the face near the upper center.
                 </span>
               )}
-              <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <input
-                  style={{ flex: 1 }}
-                  value={entry.featuredImage}
-                  onChange={(e) => set("featuredImage", e.target.value)}
-                />
-                <input 
-                  type="file" 
-                  accept="image/jpeg,image/png,image/webp"
-                  disabled={busy}
-                  onChange={(e) => {
-                    const file = e.target.files?.[0];
-                    if (file) uploadImage(file, "featuredImage");
-                  }} 
-                  style={{ flex: "none", width: "auto" }}
-                />
-              </div>
-            </label>
+                  <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                    <input
+                      style={{ flex: 1 }}
+                      value={entry.featuredImage}
+                      onChange={(e) => set("featuredImage", e.target.value)}
+                    />
+                    <input 
+                      type="file" 
+                      accept="image/jpeg,image/png,image/webp"
+                      disabled={busy}
+                      onChange={(e) => {
+                        const file = e.target.files?.[0];
+                        if (file) uploadImage(file, "featuredImage");
+                      }} 
+                      style={{ flex: "none", width: "auto" }}
+                    />
+                    <button type="submit" className="button button-small" disabled={busy} style={{ flex: "none" }}>Save</button>
+                  </div>
+                  {entry.featuredImage && (
+                    <img 
+                      src={entry.featuredImage} 
+                      alt="Preview" 
+                      style={{ marginTop: "10px", maxHeight: "150px", borderRadius: "8px", objectFit: "contain" }} 
+                    />
+                  )}
+                </label>
             <label>
               Image alt text
               <input
@@ -644,7 +652,15 @@ export function ContentEditor({
                       }} 
                       style={{ flex: "none", width: "auto" }}
                     />
+                    <button type="submit" className="button button-small" disabled={busy} style={{ flex: "none" }}>Save</button>
                   </div>
+                  {img.url && (
+                    <img 
+                      src={img.url} 
+                      alt="Preview" 
+                      style={{ marginTop: "10px", maxHeight: "150px", borderRadius: "8px", objectFit: "contain" }} 
+                    />
+                  )}
                 </label>
                 <label>
                   Alt text
