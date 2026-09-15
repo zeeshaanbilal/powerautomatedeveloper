@@ -529,6 +529,35 @@ const initialContent: Entry[] = [
     },
   ),
   entry(
+    "TEAM",
+    "developers/aqsa-wazeer",
+    "Aqsa Wazeer",
+    "Power Automate Desktop Developer at HashTurn. Aqsa builds attended and unattended workflows for legacy application automation.",
+    {
+      role: "Power Automate Desktop Developer",
+      sections: [
+        {
+          title: "Desktop Automation Specialist",
+          text: "Aqsa builds robust, unattended desktop flows to replace manual typing, copy-pasting, and legacy system navigation. Her solutions ensure repetitive daily tasks are handled autonomously.",
+        },
+        {
+          title: "Error Handling & Recovery",
+          text: "She designs workflows that account for application timeouts and unexpected popups, guaranteeing that if an automation fails, the team knows exactly where and why.",
+        },
+      ],
+      skills: [
+        "Power Automate Desktop",
+        "RPA",
+        "Legacy System Automation",
+        "Excel",
+      ],
+      related: [
+        "services/power-automate-desktop",
+        "hire/power-automate-developer",
+      ],
+    },
+  ),
+  entry(
     "PAGE",
     "developers/our-team",
     "One team. Connected expertise.",
@@ -690,6 +719,11 @@ export const seedContent: Entry[] = initialContent.map((entry) => {
   if (e.slug === "developers/zohaib-rashid") {
     e.featuredImage = "/images/zohaib-rashid.jpg";
     e.imageAlt = "Zohaib Rashid, Power Apps Developer";
+  }
+  
+  if (e.slug === "developers/aqsa-wazeer") {
+    e.featuredImage = "/images/aqsa-wazeer.jpg";
+    e.imageAlt = "Aqsa Wazeer, Power Automate Desktop Developer";
   }
   
   return e;
