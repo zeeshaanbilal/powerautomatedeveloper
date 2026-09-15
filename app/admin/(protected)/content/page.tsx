@@ -2,6 +2,7 @@ import { requireAdmin } from "@/lib/auth";
 import Link from "next/link";
 import { getAllContent, isPublished } from "@/lib/content";
 import { adminKinds } from "@/lib/types";
+import { SortableContentList } from "@/components/admin/sortable-content-list";
 export default async function ContentList({
   searchParams,
 }: {
@@ -46,51 +47,16 @@ export default async function ContentList({
         <button className="button button-small">Filter</button>
       </form>
       <div className="admin-panel table-wrap">
-        <table className="admin-table">
-          <thead>
-            <tr>
-              <th>Title / path</th>
-              <th>Type</th>
-              <th>Status</th>
-              <th>Order</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {entries.map((e) => (
-              <tr key={e.id}>
-                <td>
-                  <Link href={`/admin/content/${e.id}/`}>{e.title}</Link>
-                  <br />
-                  <span className="small muted">
-                    /{e.slug}
-                    {e.slug ? "/" : ""}
-                  </span>
-                </td>
-                <td>{e.kind === "DEVELOPER" ? "TEAM" : e.kind}</td>
-                <td>
-                  <span className="status">
-                    {isPublished(e)
-                      ? "PUBLISHED"
-                      : e.status === "PUBLISHED"
-                        ? "SCHEDULED"
-                        : "DRAFT"}
-                  </span>
-                </td>
-                <td>{e.sortOrder}</td>
-                <td>
-                  <Link href={`/admin/content/${e.id}/`}>Edit</Link> ·{" "}
-                  <Link href={`/admin/preview/${e.id}/`}>Preview</Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        {!entries.length && (
-          <p className="admin-empty">
-            No content yet. Create a draft to get started.
-          </p>
-        )}
+        <SortableContentList 
+          initialEntries={entries.map((e) => ({
+            id: e.id,
+            title: e.title,
+            slug: e.slug,
+            kind: e.kind === "DEVELOPER" ? "TEAM" : e.kind,
+            statusString: isPublished(e) ? "PUBLISHED" : e.status === "PUBLISHED" ? "SCHEDULED" : "DRAFT",
+            sortOrder: e.sortOrder
+          }))}
+        />
       </div>
     </>
   );
