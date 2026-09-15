@@ -1,6 +1,6 @@
 import { requireAdmin } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { revalidateTag } from "next/cache";
+import { refreshContent } from "@/lib/cache";
 
 export async function POST(req: Request) {
   try {
@@ -21,7 +21,7 @@ export async function POST(req: Request) {
       )
     );
 
-    revalidateTag("cms");
+    refreshContent();
     return Response.json({ success: true });
   } catch (err: any) {
     return Response.json(
