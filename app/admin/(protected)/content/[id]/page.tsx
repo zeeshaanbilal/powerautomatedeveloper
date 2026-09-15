@@ -1,4 +1,5 @@
 import { requireAdmin } from "@/lib/auth";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllContent } from "@/lib/content";
 import { ContentEditor } from "@/components/admin/content-editor";
@@ -60,7 +61,12 @@ export default async function Edit({
   return (
     <>
       <div className="admin-top">
-        <h1>{id === "new" ? "Create content" : "Edit content"}</h1>
+        <div>
+          <Link href="/admin/content/" style={{ display: "inline-block", marginBottom: "10px", fontSize: "14px", color: "var(--accent)", textDecoration: "none" }}>
+            ← Back to all content
+          </Link>
+          <h1>{id === "new" ? "Create content" : "Edit content"}</h1>
+        </div>
       </div>
       <ContentEditor
         initial={JSON.parse(JSON.stringify(initial)) as Entry}

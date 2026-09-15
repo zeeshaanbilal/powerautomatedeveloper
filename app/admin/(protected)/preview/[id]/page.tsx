@@ -14,7 +14,13 @@ export default async function Preview({
   const found = entries.find((e) => e.id === id);
   if (!found) notFound();
   return (
-    <div className="admin-panel">
+    <>
+      <div className="admin-top">
+        <a href="/admin/content/" style={{ display: "inline-block", marginBottom: "10px", fontSize: "14px", color: "var(--accent)", textDecoration: "none" }}>
+          ← Back to all content
+        </a>
+      </div>
+      <div className="admin-panel">
       {!found.slug ? (
         <>
           <div className="preview-banner">Authenticated homepage preview</div>
@@ -24,5 +30,6 @@ export default async function Preview({
         <PageContent entry={found} entries={entries} preview />
       )}
     </div>
+    </>
   );
 }

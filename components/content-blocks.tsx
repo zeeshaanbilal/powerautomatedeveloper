@@ -27,9 +27,27 @@ export function Breadcrumbs({
     const found = entries.find((e) => e.slug === slug);
     if (found) crumbs.push({ title: found.title, href: publicPath(slug) });
   });
+  const backCrumb = crumbs.length > 1 ? crumbs[crumbs.length - 2] : null;
+
   return (
     <>
-      <nav className="breadcrumbs" aria-label="Breadcrumb">
+      <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+        {backCrumb && (
+          <Link 
+            href={backCrumb.href} 
+            style={{ 
+              display: "inline-flex", 
+              alignItems: "center", 
+              fontSize: "14px", 
+              fontWeight: 500, 
+              color: "var(--accent)", 
+              textDecoration: "none"
+            }}
+          >
+            ← Back to {backCrumb.title}
+          </Link>
+        )}
+        <nav className="breadcrumbs" aria-label="Breadcrumb">
         <ol>
           {crumbs.map((c, i) => (
             <li key={c.href}>
@@ -41,7 +59,8 @@ export function Breadcrumbs({
             </li>
           ))}
         </ol>
-      </nav>
+        </nav>
+      </div>
       <JsonLd
         value={{
           "@context": "https://schema.org",
