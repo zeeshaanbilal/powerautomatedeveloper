@@ -69,6 +69,28 @@ export function ServiceIcon({ slug }: { slug: string }) {
       />
     );
   }
+  if (slug.includes("business-process") || slug.includes("workflow") || slug.includes("operation")) {
+    // Operations Workflow — Flowchart Node Icon
+    return (
+      <svg viewBox="0 0 32 32" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* Main node */}
+        <rect x="4" y="12" width="8" height="8" rx="2" fill="#e5f0ff" stroke="#0066ff" strokeWidth="1.5" />
+        {/* Branch lines */}
+        <path d="M12 16H17" stroke="#0066ff" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M17 16V8H20" stroke="#0066ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M17 16H20" stroke="#0066ff" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M17 16V24H20" stroke="#0066ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        {/* Sub-nodes */}
+        <rect x="20" y="5" width="8" height="6" rx="1.5" fill="#e5f0ff" stroke="#0066ff" strokeWidth="1.5" />
+        <rect x="20" y="13" width="8" height="6" rx="1.5" fill="#e5f0ff" stroke="#0066ff" strokeWidth="1.5" />
+        <rect x="20" y="21" width="8" height="6" rx="1.5" fill="#e5f0ff" stroke="#0066ff" strokeWidth="1.5" />
+        {/* Small dots inside sub-nodes */}
+        <circle cx="24" cy="8" r="1" fill="#0066ff" />
+        <circle cx="24" cy="16" r="1" fill="#0066ff" />
+        <circle cx="24" cy="24" r="1" fill="#0066ff" />
+      </svg>
+    );
+  }
   
   // Default API / Integrations
   return (
