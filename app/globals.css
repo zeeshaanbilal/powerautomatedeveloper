@@ -818,11 +818,14 @@ p {
   gap: 10px;
 }
 .chips > span {
-  padding: 9px 15px;
+  padding: 8px 16px;
   font-size: 14px;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  background: white;
+  border: 1px solid #d2dff5;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ffffff, #f7f9fc);
+  color: #1e3a68;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 .faq-grid {
   display: grid;
