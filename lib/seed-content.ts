@@ -507,12 +507,12 @@ const initialContent: Entry[] = [
       role: "Automation Engineer",
       sections: [
         {
-          title: "Custom Business Applications",
-          text: "Zohaib designs canvas and model-driven applications tailored to specific operational workflows, ensuring clear data entry and reliable request management.",
+          title: "Power Apps",
+          text: "Zohaib designs canvas and model-driven applications around specific operational workflows, ensuring clear data entry and reliable request management.",
         },
         {
-          title: "Relational Data Foundations",
-          text: "He structures Dataverse environments and SharePoint architectures so that Power Platform solutions rest on secure, consistent, and scalable data models.",
+          title: "Dataverse & SharePoint",
+          text: "He structures Dataverse environments and SharePoint architectures so that Power Platform solutions rest on secure, consistent, and practical data models.",
         },
       ],
       skills: [
