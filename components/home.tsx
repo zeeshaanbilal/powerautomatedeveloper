@@ -408,23 +408,45 @@ export async function Home({
       <section className="section container stack">
         <span className="eyebrow">{copy("text72")}</span>
         <h2>{copy("text73")}</h2>
-        <div className="chips">
-          {[
-            copy("text74"),
-            copy("text75"),
-            "SharePoint",
-            "Dataverse",
-            copy("text76"),
-            copy("text77"),
-            "Microsoft 365",
-            copy("text78"),
-            "n8n",
-            "Python",
-            "Excel / VBA",
-            copy("text79"),
-          ].map((s) => (
-            <span key={s}>{s}</span>
-          ))}
+        <div className="marquee-container">
+          <div className="marquee-content">
+            <div className="chips marquee-inner">
+              {[
+                copy("text74"),
+                copy("text75"),
+                "SharePoint",
+                "Dataverse",
+                copy("text76"),
+                copy("text77"),
+                "Microsoft 365",
+                copy("text78"),
+                "n8n",
+                "Python",
+                "Excel / VBA",
+                copy("text79"),
+              ].map((s) => (
+                <span key={s}>{s}</span>
+              ))}
+            </div>
+            <div className="chips marquee-inner" aria-hidden="true">
+              {[
+                copy("text74"),
+                copy("text75"),
+                "SharePoint",
+                "Dataverse",
+                copy("text76"),
+                copy("text77"),
+                "Microsoft 365",
+                copy("text78"),
+                "n8n",
+                "Python",
+                "Excel / VBA",
+                copy("text79"),
+              ].map((s) => (
+                <span key={`${s}-dup`}>{s}</span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
       <section className="section soft-section">
