@@ -717,7 +717,7 @@ const initialContent: Entry[] = [
       title: `${title} | HashTurn`,
       description: `Read the ${title.toLowerCase()} information for HashTurn’s automation services website.`,
       canonical: `${origin}/${slug}/`,
-      noindex: true,
+      noindex: false,
       ogImage: "/opengraph-image",
       schemaEnabled: true,
     },
