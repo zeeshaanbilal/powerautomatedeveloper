@@ -130,7 +130,7 @@ export function FAQs({ items }: { items: NonNullable<Entry["data"]["faqs"]> }) {
   return (
     <div className="faq-list">
       {items.map((f) => (
-        <details key={f.question}>
+        <details key={f.question} name="faq-accordion">
           <summary>
             {f.question}
             <span aria-hidden="true">+</span>
