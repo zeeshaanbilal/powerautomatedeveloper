@@ -109,13 +109,15 @@ p {
   border-block: 1px solid #e7ece8;
 }
 .eyebrow {
-  display: block;
+  display: inline-block;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-size: 14px;
   font-weight: 700;
-  margin-bottom: 24px;
-  color: var(--teal);
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, var(--teal), #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .tiny-square {
   display: inline-block;
@@ -139,9 +141,12 @@ p {
   line-height: 1.4;
   min-height: 48px;
   text-align: center;
-  transition: background 0.15s;
+  box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.25);
+  transition: all 0.2s ease-in-out;
 }
 .button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
   background: #1045b4;
   border-color: #1045b4;
 }
@@ -579,10 +584,13 @@ p {
   background: var(--paper);
   display: flex;
   flex-direction: column;
-  transition: border-color 0.15s;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
 }
 .service-card:hover {
   border-color: var(--teal);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
 }
 .card-icon {
   width: 48px;

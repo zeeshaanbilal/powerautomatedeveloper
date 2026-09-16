@@ -3,7 +3,11 @@
   height: 80px;
   position: sticky;
   top: 0;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
   z-index: 100;
 }
 .header-inner {
@@ -25,7 +29,9 @@
   font-size: 25px;
 }
 .hero {
-  background: #fff;
+  background: radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.04), transparent 50%),
+              radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.03), transparent 50%),
+              #fff;
   padding: 64px 0 58px;
 }
 .hero-grid {
