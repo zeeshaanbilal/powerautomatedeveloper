@@ -508,7 +508,7 @@ const initialContent: Entry[] = [
       sections: [
         {
           title: "Custom Business Applications",
-          text: "Zohaib designs canvas and model-driven applications tailored to specific operational workflows, ensuring intuitive data entry and seamless request management.",
+          text: "Zohaib designs canvas and model-driven applications tailored to specific operational workflows, ensuring clear data entry and reliable request management.",
         },
         {
           title: "Relational Data Foundations",
@@ -538,7 +538,7 @@ const initialContent: Entry[] = [
       sections: [
         {
           title: "Desktop Automation Specialist",
-          text: "Aqsa builds robust, unattended desktop flows to replace manual typing, copy-pasting, and legacy system navigation. Her solutions ensure repetitive daily tasks are handled autonomously.",
+          text: "Aqsa builds dependable, unattended desktop flows to replace manual typing, copy-pasting, and legacy system navigation. Her solutions ensure repetitive daily tasks are handled autonomously.",
         },
         {
           title: "Error Handling & Recovery",
@@ -561,13 +561,13 @@ const initialContent: Entry[] = [
     "TEAM",
     "developers/iqra-ahsan",
     "Iqra Ahsan",
-    "SharePoint Architect at HashTurn. Iqra designs robust and scalable SharePoint architectures.",
+    "SharePoint Architect at HashTurn. Iqra designs practical and structured SharePoint environments.",
     {
       role: "SharePoint Architect",
       sections: [
         {
           title: "SharePoint Architecture",
-          text: "Iqra plans the information architecture, governance policies, and designs robust SharePoint solutions.",
+          text: "Iqra plans the information architecture, governance policies, and designs reliable SharePoint solutions.",
         },
       ],
       skills: [
